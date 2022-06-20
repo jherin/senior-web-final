@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous"
+        />
+        <title>movie</title>
+    </head>
+    <body>
+        <!--검색창-->
+        <div>
+            <form name="form" id="form">
+                <input type="text" value="내용을 입력하세요." id="text-search" size="75">
+                <select id="select-search" name="selections">
+                    <option selected>제목</option>
+                    <option>감독</option>
+                </select>
+                <button type="button" id="btSearch" onclick="search_output(form.selections)">
+                    <img src="search.jpg" width="48px" height="50px">
+                </button>
+            </form>
+        </div>
+        <!--포스터 라인-->
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                    <img src="image1.jpg" class="card-img-top" onclick="image_click(0); ">
+                    <div class="card-body">
+                        <h3 class="card-title">범죄도시2</h3>
+                        <p class="card-text">출연진: 마동석, 손석구, 최귀화, 박지환, 허동원..등 <br> 
+                            개봉일자: 2022년 5월 18일<br> 
+                            감독: 이상용<br></p>
+                        <a href="http://www.cgv.co.kr/movies/detail-view/?midx=85813" target="_blank" class="btn btn-primary">상세보기</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                    <img src="image2.jpg" class="card-img-top" onclick="image_click(1);">
+                    <div class="card-body">
+                      <h3 class="card-title">쥬라기월드-도미니언</h3>
+                      <p class="card-text">출연진: 크리스 프랫, 브라이스 달라스 하워드..등<br> 
+                          개봉일자: 2022년 6월 1일<br> 
+                          감독: 콜린 트레보로우<br></p>
+                      <a href="http://www.cgv.co.kr/movies/detail-view/?midx=85689" target="_blank" class="btn btn-primary">상세보기</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                    <img src="image3.jpg" class="card-img-top" onclick="image_click(2);">
+                    <div class="card-body">
+                        <h3 class="card-title">브로커</h3>
+                        <p class="card-text">출연진: 송강호, 강동원, 배두나, 이지은, 이주영 <br> 
+                            개봉일자: 2022년 6월 8일<br> 
+                            감독: 고레에다 히로카즈<br></p>
+                        <a href="http://www.cgv.co.kr/movies/detail-view/?midx=85829" target="_blank" class="btn btn-primary">상세보기</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                    <img src="image4.jpg" class="card-img-top" onclick="image_click(3);">
+                    <div class="card-body">
+                        <h3 class="card-title">마녀2</h3>
+                        <p class="card-text">출연진: 신시아, 박은빈, 서은수, 진구 ..등<br> 
+                            개봉일자: 2022년 6월 15일<br> 
+                            감독: 박훈정<br></p>
+                        <a href="http://www.cgv.co.kr/movies/detail-view/?midx=85871" target="_blank" class="btn btn-primary">상세보기</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--검색 결과 출력하는 영역-->
+        <div id="target">
+        </div>
+        <!--고정 바로 예매 부분 만들기-->
+        <div>
+            <input type="button" value="랭킹 보기" id="btnow" onclick="btnow_click()">
+        </div>
+
+        <script>
+            //검색 버튼 함수
+            function search_output(selValue){
+                const strData=document.getElementById('text-search').value;
+                const target=document.querySelector("#target");
+                var strInfo="";
+                var strDate="";
+                var strAge="";
+
+                if(selValue.options[0].selected){
+                    if(strData=="범죄도시" || strData=="범죄도시2"){
+                        strInfo+="범죄도시2";
+                        strDate+="05월 18일";
+                        strAge+="15세 관람가";
+                    }else if(strData=="쥬라기월드" || strData=="쥬라기월드-도미니언"){
+                        strInfo+="쥬라기월드-도미니언";
+                        strDate+="06월 01일";
+                        strAge+="12세 관람가";
+                    }else if(strData=="브로커"){
+                        strInfo+=strData;
+                        strDate+="06월 08일";
+                        strAge+="12세 관람가";
+                    }else if(strData=="마녀" || strData=="마녀2"){
+                        strInfo+="마녀2";
+                        strDate+="06월 15일";
+                        strAge+="15세 관람가";
+                    }else {
+                        strInfo+="검색 내용이 없습니다. ";
+                    }
+                    
+                }
+                else{
+                    if(strData=="이상용"){
+                        strInfo+="범죄도시2";
+                        strDate+="05월 18일";
+                        strAge+="15세 관람가";
+                    }
+                    else if(strData=="콜린 트레보로우"){
+                        strInfo+="쥬라기월드-도미니언";
+                        strDate+="06월 01일";
+                        strAge+="12세 관람가";
+                    }else if(strData=="고레에다 히로카즈"){
+                        strInfo+="브로커";
+                        strDate+="06월 08일";
+                        strAge+="12세 관람가";
+                    }else if(strData=="박훈정"){
+                        strInfo+="마녀2";
+                        strDate+="06월 15일";
+                        strAge+="15세 관람가";
+                    }else {
+                        strInfo+="검색 내용이 없습니다. ";
+                    }
+                }
+                target.innerHTML=
+                `<div>
+                    <table>
+                        <tr>
+                          <th>제목</th>
+                          <th>개봉일자</th>
+                          <th>연령</th>
+                        </tr>
+                        <tr>
+                            <td>${strInfo}</td>
+                            <td>${strDate}</td>
+                            <td>${strAge}</td>
+                        </tr>
+                    </table>
+                <br>
+                </div>`;
+                
+            }
+            //포스터 클릭 함수
+            function image_click(id){
+                const target=document.querySelector("#target");
+
+                fetch("http://localhost:4000/movies")
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function (json){
+                    const {body}=json;
+                    const {movies}=body;
+                    console.log("제목: "+movies[id].moviename+" 개봉일: "+movies[id].opendate+" "+movies[id].age+"세 연령가 감독: "+movies[id].director);
+                    target.innerHTML=
+                    `<div>
+                        <table>
+                            <tr>
+                            <th>제목</th>
+                            <th>개봉일자</th>
+                            <th>연령</th>
+                            </tr>
+                            <tr>
+                                <td>${movies[id].moviename}</td>
+                                <td>${movies[id].opendate}</td>
+                                <td>${movies[id].age}세 연령가 </td>
+                            </tr>
+                        </table>
+                    <br>
+                    </div>`;
+                })
+            }
+            //예매 버튼
+            function btnow_click(){
+                alert("전날 랭킹을 확인하세요")
+                document.location.href="rank.html";
+            } 
+        </script>
+    </body>
+</html>

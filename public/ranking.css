@@ -1,0 +1,39 @@
+body {
+    background-color: aliceblue;
+}
+div{
+    text-align: center;
+}
+#rankbox {
+    margin-left: 600px;
+    margin-top: 41px;
+    margin-bottom: 40px;
+    width: 325px;
+    border: 3px solid #22741C;
+    border-radius: 33px;
+    box-shadow: 10px 10px 10px #cccccc;
+}
+#rankbox p{
+    font-weight: bold;
+    font-size: 20pt;
+    color:#269BAF;
+    padding: 9px;
+    font-family: 'times';
+}
+
+#mybtn {
+    width: 89px;
+    height: 43px;
+    margin-top: 18px;
+    font-size: 15pt;
+    background-color:#C1F3FF;
+    border: solid 1px #B79090;
+    border-radius: 18%;
+    box-shadow: 5px 5px 5px #cccccc;
+    font-family: '굴림';
+}
+#rank {
+    font-weight: bold;
+    font-family: '굴림';
+}
+

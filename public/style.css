@@ -1,0 +1,73 @@
+
+input#btnow {
+    position: fixed;
+    right: -20px;
+    bottom: 30px;
+    width: 200px;
+    height: 80px;
+    padding: 10px;
+    margin: 20px;
+    background: #B2CCFF;
+    border: 3px solid #D9E5FF;
+    box-shadow: -10px 10px 10px #cccccc;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 20pt;
+    font-weight: bold;
+    color: #4641D9;
+}
+
+input#text-search {
+    padding: 15px;
+    margin-top:20px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    margin-right: -5px;
+}
+
+select#select-search {
+    padding: 12px;
+    padding-bottom: 16px;
+    margin-right: -5px;
+    background: #D5D5D5;
+    font-size: 15pt;
+}
+
+button#btSearch {
+    background: #353535;
+    margin-left: -1px;
+    padding-top: 4px;
+}
+
+div#target {
+    margin: 20px 45px;
+    padding: 28px;
+}
+
+div#target table{
+    width: 100%;
+    text-align: center;
+    border-top: 2px solid #4374D9;
+    border-collapse: collapse;
+    font-size:13pt;
+}
+
+div#target th{
+    border-bottom: 2px solid #4374D9;
+    border-left: 2px solid #4374D9;
+    padding: 10px;
+}
+
+div#target td{
+    border-bottom: 2px solid #4374D9;
+    border-left: 2px solid #4374D9;
+    padding: 10px;
+}
+
+div#target th:first-child{
+    border-left: none;
+}
+
+div#target td:first-child{
+    border-left: none;
+}
